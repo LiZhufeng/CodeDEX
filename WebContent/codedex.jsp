@@ -4,22 +4,26 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Command Injection</title>
+<%@include file="/header_codedex.jsp" %>
+<%
+request.setCharacterEncoding("utf-8"); 
+response.setContentType("text/html;charset=utf-8");
+connect();
+String cid = request.getParameter("cid");
+CodeDEX codeDEX = getCodeDEXByCid(cid);
+%>
+<title><%=codeDEX.question %></title>
 </head>
 <body>
 
-<h2 id="command-injection">Command Injection</h2>
-
-
-
-<h3 id="这里写问题">这里写问题</h3>
+<h2 id="question"><%=codeDEX.question%></h2>
 
 
 
 <h3 id="问题描述">问题描述</h3>
 
 <blockquote>
-  <p>这里写问题描述</p>
+  <p><%=codeDEX.description %></p>
 </blockquote>
 
 
@@ -27,7 +31,7 @@
 <h3 id="解决方法">解决方法</h3>
 
 <blockquote>
-  <p>这里写解决方法</p>
+  <p><%=codeDEX.solution %></p>
 </blockquote>
 
 
@@ -36,7 +40,7 @@
 
 
 
-<pre class="prettyprint"><code class="language-java hljs ">System.out.println(<span class="hljs-string">"这里写代码"</span>);</code></pre>
+<pre class="prettyprint"><code class="language-java hljs "><%=codeDEX.code %></code></pre>
 
 </body>
 </html>

@@ -19,44 +19,19 @@ List<Question> getAllQuestion()
 {
 	List<Question> list = new ArrayList();
 	try {
-		String sql = "select qid, link, question from Question;";
+		String sql = "select qid, question from Question;";
 		state = conn.createStatement();
 		resultSet = state.executeQuery(sql);
 		while (resultSet.next()) {
 			String qid = resultSet.getString("qid");
 			String question = resultSet.getString("question");
-			String link = resultSet.getString("link");
-			list.add(new Question(qid, question, null, link));
+			list.add(new Question(qid, question, null));
 		}
 	}
 	catch (SQLException e)
 	{
 	}
 	return list;
-}
-
-//连接数据库
-ResultSet resultSet = null;
-Statement state = null;
-Connection conn = null;
-int resultInt;
-boolean resultBoolean;
-boolean connect(){
-	String connectString = "jdbc:mysql://localhost:3306/company"
-			+ "?autoReconnect=true&useUnicode=true&characterEncoding=UTF-8";
-	try {
-		Class.forName("com.mysql.jdbc.Driver");
-		conn = DriverManager.getConnection(connectString, "root", "");
-	} catch (Exception e) {
-		return false;
-	}
-	String sqlSentence = "select * from Question;";
-	try {
-		state = conn.createStatement();
-		resultSet = state.executeQuery(sqlSentence);
-	}
-	catch (Exception e) {return false;}
-	return true;
 }
 %>
 <body>
@@ -79,7 +54,7 @@ while (iterator.hasNext())
 	Question question = iterator.next();
 %>
 <li><strong>
-<a href="<%=question.link%>?qid=<%=question.qid%>" >
+<a href="/CodeDEX/question.jsp?qid=<%=question.qid%>" >
 <%
 	out.print(question.question);
 %>
