@@ -49,5 +49,9 @@ while (iterator.hasNext())
 }
 %>
 </ul>
+
+<h3 id="add_codedex"><a href="/CodeDEX/upload_codedex.jsp?qid=<%=qid%>" >
+<font face="微软雅黑">没有找到你想查找的Codedex？点击这里添加</font></a></h3>
+
 </body>
 </html>

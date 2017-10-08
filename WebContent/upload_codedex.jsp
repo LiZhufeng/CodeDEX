@@ -8,6 +8,11 @@
 </head>
 <link rel="stylesheet" href="CSS/form_question.css" type="text/css" />
 <body>
+<%
+request.setCharacterEncoding("utf-8"); 
+response.setContentType("text/html;charset=utf-8");
+String qid = request.getParameter("qid");
+%>
 <!-- 提交codeDEX，提交的内容包括：名字、描述、解决方式、代码 -->
 <form action="upload.jsp" method="post" class="white-pink">
 <h1>提交CodeDEX
@@ -29,9 +34,10 @@
 <span>Code</span>
 <textarea id="code" name="code" placeholder="代码"></textarea>
 </label>
+<input type="hidden" name="qid" value="<%=qid%>">
 <label>
 <span>&nbsp;</span>
-<input type="button" class="button" value="Send" />
+<input type="submit" class="button" value="Send" />
 </label>
 </form>
 </body>
