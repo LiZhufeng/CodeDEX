@@ -55,5 +55,25 @@ List<CodeDEX> getCodeDEXByQid(String qid)
 	}
 	return list;
 }
+
+//获取所有的问题
+List<Question> getAllQuestion()
+{
+	List<Question> list = new ArrayList();
+	try {
+		String sql = "select qid, question from Question;";
+		state = conn.createStatement();
+		resultSet = state.executeQuery(sql);
+		while (resultSet.next()) {
+			String qid = resultSet.getString("qid");
+			String question = resultSet.getString("question");
+			list.add(new Question(qid, question, null));
+		}
+	}
+	catch (SQLException e)
+	{
+	}
+	return list;
+}
 %>
 </html>

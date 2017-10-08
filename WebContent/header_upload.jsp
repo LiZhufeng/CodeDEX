@@ -4,12 +4,5 @@
 <html>
 <head>
 <%@include file="/header.jsp" %>
-<%!
-// 插入一个新的codeDEX
-boolean insertCodeDEX(CodeDEX codeDEX, String qid)
-{
-	
-}
-%>
 
 </html>

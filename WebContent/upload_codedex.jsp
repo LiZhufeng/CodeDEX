@@ -6,30 +6,28 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>提交问题</title>
 </head>
-<link rel="stylesheet" href="CSS/form.css" type="text/css" />
+<link rel="stylesheet" href="CSS/form_question.css" type="text/css" />
 <body>
 <!-- 提交codeDEX，提交的内容包括：名字、描述、解决方式、代码 -->
 <form action="upload.jsp" method="post" class="white-pink">
-<h1>Contact Form
-<span>Please fill all the texts in the fields.</span>
+<h1>提交CodeDEX
+<span>请在下方填写好需要CodeDEX的信息</span>
 </h1>
 <label>
-<span>Your Name :</span>
-<input id="name" type="text" name="name" placeholder="Your Full Name" />
+<span>Name: </span>
+<input id="name" type="text" name="name" placeholder="输入CodeDEX名字" />
 </label>
 <label>
-<span>Your Email :</span>
-<input id="email" type="email" name="email" placeholder="Valid Email Address" />
+<span>Description</span>
+<input id="description" type="text" name="description" placeholder="输入CodeDEX的基本描述" />
 </label>
 <label>
-<span>Message :</span>
-<textarea id="message" name="message" placeholder="Your Message to Us"></textarea>
+<span>Solution</span>
+<input id="solution" type="text" name="solution" placeholder="输入解决方法" />
 </label>
 <label>
-<span>Subject :</span><select name="selection">
-<option value="Job Inquiry">Job Inquiry</option>
-<option value="General Question">General Question</option>
-</select>
+<span>Code</span>
+<textarea id="code" name="code" placeholder="代码"></textarea>
 </label>
 <label>
 <span>&nbsp;</span>

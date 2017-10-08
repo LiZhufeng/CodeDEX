@@ -11,29 +11,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>首页</title>
 </head>
-<%@include file="header.jsp" %>
-<%!
-
-// 获取所有的问题
-List<Question> getAllQuestion()
-{
-	List<Question> list = new ArrayList();
-	try {
-		String sql = "select qid, question from Question;";
-		state = conn.createStatement();
-		resultSet = state.executeQuery(sql);
-		while (resultSet.next()) {
-			String qid = resultSet.getString("qid");
-			String question = resultSet.getString("question");
-			list.add(new Question(qid, question, null));
-		}
-	}
-	catch (SQLException e)
-	{
-	}
-	return list;
-}
-%>
+<%@include file="header_question.jsp" %>
 <body>
 <%
 request.setCharacterEncoding("utf-8"); 
@@ -43,8 +21,8 @@ List<Question> list_question = getAllQuestion();
 %>
 <h1 id="codedex"><font face="微软雅黑">codeDEX</font></h1>
 
-<p>将平时自己改的codeDEX进行总结。</p>
-
+<p>将平时自己改的codeDEX进行总结。我老婆镇楼。</p>
+<img src="Resource/01.jpg" alt="圣人惠"></p>
 <ul>
 <li><strong>这里显示问题的类别</strong></li>
 <%
