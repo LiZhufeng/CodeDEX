@@ -18,7 +18,14 @@ String description = request.getParameter("description");
 String solution = request.getParameter("solution");
 String code = request.getParameter("code");
 
-out.print(qid + " " + question + " " + description + " " + solution + " " + code);
+// out.print(qid + " " + question + " " + description + " " + solution + " " + code);
+
+// 上传codeDEX
+if (null != qid)
+{
+	CodeDEX codeDEX = new CodeDEX("", question, description, solution, code);
+	boolean upload_success = uploadCodeDEX(codeDEX, qid);
+}
 %>
 
 </body>

@@ -21,8 +21,13 @@ List<Question> list_question = getAllQuestion();
 %>
 <h1 id="codedex"><font face="微软雅黑">codeDEX</font></h1>
 
-<p>将平时自己改的codeDEX进行总结。我老婆镇楼。</p>
+<p><font size="3" face="微软雅黑">将平时自己改的codeDEX进行总结。我老婆镇楼。</font></p>
 <img src="Resource/01.jpg" alt="圣人惠"></p>
+
+<blockquote>
+  <p><font size="7" face="微软雅黑">没有找到你想搜索的问题？点击这里。 </font></p>
+</blockquote>
+
 <ul>
 <li><strong>这里显示问题的类别</strong></li>
 <%
@@ -42,5 +47,9 @@ while (iterator.hasNext())
 }
 %>
 </ul>
+
+<blockquote>
+  <p><font size="7" face="微软雅黑">没有找到你想搜索的问题？点击这里。 </font></p>
+</blockquote>
 </body>
 </html>

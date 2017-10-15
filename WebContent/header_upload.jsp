@@ -29,6 +29,7 @@ boolean uploadCodeDEX(CodeDEX codeDEX, String qid)
 			return false;
 		}
 		
+		// 获取刚刚插入的最新的codeDEX
 		sql = "select cid from CodeDEX where question = '" + codeDEX.question + "';";
 		ResultSet resultSet_codeDEX = state.executeQuery(sql);
 		if (!resultSet_codeDEX.next()) {
